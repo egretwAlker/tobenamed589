@@ -38,7 +38,7 @@ export default class ExamplePlugin extends Plugin {
 	async onload() {
 		this.registerEvent(
 			this.app.workspace.on("editor-menu", (menu, editor, view) => {
-				let match = editor.getValue().match(/!\[\[(.*)\]\]$/);
+				let match = editor.getSelection().match(/!\[\[(.*)\]\]$/);
 				if (match) {
 					let s: string = match[1];
 					menu.addItem((item) => {

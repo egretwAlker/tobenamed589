@@ -1,11 +1,11 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "tobenamed589",
+	"name": "tobenamed589",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
+	"description": "It should do what a plugin should do to make quick noting in obsidian a more pleasant experience",
 	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"authorUrl": "https://egretwalker.github.io/",
+	"fundingUrl": "https://egretwalker.github.io/",
 	"isDesktopOnly": false
 }

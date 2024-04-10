@@ -8,6 +8,9 @@ import {
 	Plugin,
 	PluginSettingTab,
 	Setting,
+	getLinkpath,
+	FileSystemAdapter,
+	resolveSubpath,
 } from "obsidian";
 
 import * as fs from "fs";
@@ -37,10 +40,13 @@ function touchFile(filePath: string, defaultText: string): void {
 export default class ExamplePlugin extends Plugin {
 	async onload() {
 		this.registerEvent(
-			this.app.workspace.on("editor-menu", (menu, editor, view) => {
-				let match = editor.getSelection().match(/!\[\[(.*)\]\]$/);
-				if (match) {
+			this.app.workspace.on("editor-menu", (menu, editor, info) => {
+				let match = editor
+					.getSelection()
+					.match(/!\[\[(.*?)(?:(?: \|.*))?\]\]$/);
+				if (match && info.file?.parent?.path) {
 					let s: string = match[1];
+					s = path.join(info.file.parent.path, s);
 					menu.addItem((item) => {
 						item.setTitle("Open (by default app) " + s).onClick(
 							async () => {

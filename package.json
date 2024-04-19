@@ -1,6 +1,6 @@
 {
 	"name": "tobenamed589",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "An Obsidian plugin - It should do what a plugin should do to make quick noting in obsidian a more pleasant experience",
 	"main": "main.js",
 	"scripts": {
